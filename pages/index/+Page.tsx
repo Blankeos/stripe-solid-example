@@ -1,17 +1,27 @@
+import { hc } from "@/lib/hc";
 import { createSignal } from "solid-js";
 
 export default function Page() {
   return (
     <>
-      <div>
-        <h1>My Vike + Solid app</h1>
-        This page is:
-        <ul>
-          <li>Rendered to HTML.</li>
-          <li>
-            Interactive. <Counter />
-          </li>
-        </ul>
+      <div class="flex flex-col flex-1">
+        <div class="h-20" />
+        <button
+          class="self-center border rounded px-3 py-1 bg-emerald-500 text-white border-emerald-300 transition active:scale-95"
+          onClick={() => {
+            hc.stripe.checkout.$post({
+              json: {
+                items: [
+                  { id: 1, quantity: 3 },
+                  { id: 2, quantity: 1 },
+                  { id: 3, quantity: 1 },
+                ],
+              },
+            });
+          }}
+        >
+          Checkout
+        </button>
       </div>
     </>
   );

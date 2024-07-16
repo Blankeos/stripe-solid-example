@@ -1,3 +1,26 @@
+# stripe-solid-example
+
+- Hono
+- Stripe
+- SolidJS
+- Vike
+
+This is a VERY simple Stripe integration. Just a simple flow of:
+
+```
+                                > Success
+                               /
+[Checkout] -> Checkout Session
+                               \
+                                > Cancel
+```
+
+No webhooks, no database, just using the Stripe sdk.
+I gave up midway. Stripe isn't available in the 🇵🇭 Philippines :D.
+
+> This was bootstrapped with [Solid Hop](https://github.com/blankeos/solid-hop).
+
+<!--
 # 🐇 Solid Hop
 
 💙 A **minimal** and **unopinionated** Vike + Solid + Hono starter.
@@ -49,4 +72,4 @@ bun run build
 
 ```sh
 bun run preview # Just runs server.ts
-```
+``` -->
